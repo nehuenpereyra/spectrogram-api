@@ -1,0 +1,91 @@
+[tool.poetry]
+name = "spectrogram-api"
+version = "1.0.0"
+description = ""
+authors = ["Nehuen Pereyra <nehuenpereyra@gmail.com>"]
+license = ""
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+fastapi = {extras = ["all"], version = "0.111.0"}
+mangum = "0.17.0"
+asgi-lifespan = "2.1.0"
+pydantic-settings = "2.2.1"
+
+[tool.taskipy.tasks]
+dev = "poetry run fastapi dev src/main.py"
+start = "poetry run fastapi run src/main.py"
+test = "poetry run pytest"
+
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+asyncio_mode = "auto"
+filterwarnings = [
+    # This's triggered by pytest-asyncio,
+    # which calls deprecated asyncio.get_event_loop() method
+    # ref: https://github.com/pytest-dev/pytest-asyncio/issues/757
+    "ignore:There is no current event loop",
+]
+
+[tool.poetry.group.dev.dependencies]
+mypy = "1.4.1"
+black = "22.12.0"
+isort = "5.12.0"
+autoflake = "2.2.0"
+pylint = "2.17.4"
+taskipy = "1.11.0"
+pytest = "8.2.0"
+pytest-asyncio = "0.23.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 130
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+  \.toml
+  |\.sh
+  |\.git
+  |\.ini
+  |Dockerfile
+  |Jenkinfile
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | .serverless
+  | node_modules
+)/
+'''
+
+[tool.isort]
+profile = "black"
+group_by_package = true
+combine_straight_imports = true
+force_single_line = true
+combine_as_imports = true
+lines_between_types = 1
+lines_after_imports = 2
+src_paths = ["src"]
+extend_skip = []
+
+[tool.pylint.master]
+max-line-length = 130
+jobs=0
+fail-under=7.0
+disable=["missing-module-docstring"]
+ignore=[]
+extension-pkg-whitelist=["pydantic"]
