@@ -7,11 +7,32 @@ license = ""
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10.0"
+# Dependencias Fast-Api
+python = ">=3.10.0,<3.12"
 fastapi = {extras = ["all"], version = "0.111.0"}
 mangum = "0.17.0"
 asgi-lifespan = "2.1.0"
 pydantic-settings = "2.2.1"
+
+# Dependencias especificas
+astropy = "5.1"
+astroquery = "0.4.6"
+astroplan = "0.8"
+julian = "0.14"
+numpy = "1.23.3"
+timezonefinder = "6.5.0"
+opencv-python = "4.6.0.66"
+scipy = "1.9.1"
+pandas = "1.5.0"
+tqdm = "4.64.1"
+seaborn = "0.12.0"
+smallthon = "1.2"
+torch = "1.11.0"
+celery = "4.4.7" 
+protobuf = "3.20.1"
+ipython= "8.12.3"
+psutil = "5.9.8"
+torchvision = "0.12.0"
 
 [tool.taskipy.tasks]
 dev = "poetry run fastapi dev src/main.py"

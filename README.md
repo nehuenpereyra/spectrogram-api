@@ -19,6 +19,7 @@ git clone git@github.com:nehuenpereyra/spectrogram-api.git
 ```
 cd spectrogram-api
 poetry install
+poetry lock
 ```
 
 3. Establecer las variables de entorno en el archivo `.env`
