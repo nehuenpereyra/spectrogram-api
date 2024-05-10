@@ -16,7 +16,7 @@ pydantic-settings = "2.2.1"
 [tool.taskipy.tasks]
 dev = "poetry run fastapi dev src/main.py"
 start = "poetry run fastapi run src/main.py"
-test = "poetry run pytest"
+test = "poetry run pytest -W ignore::DeprecationWarning"
 
 
 [tool.pytest.ini_options]

@@ -17,7 +17,7 @@ git clone git@github.com:nehuenpereyra/spectrogram-api.git
 2. Instalar depedencias
 
 ```
-cd fastapi
+cd spectrogram-api
 poetry install
 ```
 

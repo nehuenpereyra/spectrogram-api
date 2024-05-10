@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request, status
 from fastapi.encoders import jsonable_encoder
-from src.config import get_settings
+from src.config import Settings
 from fastapi.middleware.cors import CORSMiddleware
 from src.api.v1.controllers import user
 from src.core.exception_handlers import CustomException, custom_exception_handler
@@ -8,7 +8,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from src.core import default_response
 
-settings = get_settings()
+settings = Settings()
 
 
 def create_application() -> FastAPI:

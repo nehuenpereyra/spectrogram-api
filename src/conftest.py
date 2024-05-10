@@ -4,9 +4,9 @@ from asgi_lifespan import LifespanManager
 from httpx import AsyncClient, ASGITransport
 import pytest
 from .main import create_application
-from src.config import get_settings
+from src.config import Settings
 
-settings = get_settings()
+settings = Settings()
 settings.STAGE = 'test'
 
 app: FastAPI = create_application()
