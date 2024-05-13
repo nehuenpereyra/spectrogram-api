@@ -14,3 +14,25 @@ class AllPathsResponse(BaseModel):
                 "email": "test@test.com",
             }
         }
+
+
+class ConfigResponse(BaseModel):
+
+    global_config: dict
+    fields: dict
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "global_config": {
+                    "workspace_path": "./db/"
+                },
+                "fields": {
+                    "OBSERVAT": {
+                        "options": [
+                            "ctio: Cerro Tololo Interamerican Observatory",
+                        ]
+                    }
+                }
+            }
+        }

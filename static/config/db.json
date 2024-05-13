@@ -1,0 +1,14 @@
+{
+    "config": {
+        "global_config": {
+            "workspace_path": "./db/"
+        },
+        "fields": {
+            "OBSERVAT": {
+                "options": [
+                    "ctio: Cerro Tololo Interamerican Observatory"
+                ]
+            }
+        }
+    }
+}
