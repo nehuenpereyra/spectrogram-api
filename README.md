@@ -40,6 +40,10 @@ En el siguiente enlace puedes ver la documentación de la API:
 `http://localhost:8000/api/v1/docs`
 
 
+## Configuración directorio de trabajo
+Si la imagen a cargar no es ```png``` se requiere tener una carpeta en el directorio de trabajo ```train``` que contenga la imagen a trabajar en formato ```png```.
+
+
 ## Observaciones
 
 ### Set python interpreter in VScode
