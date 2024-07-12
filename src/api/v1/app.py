@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.encoders import jsonable_encoder
 from src.config import Settings
 from fastapi.middleware.cors import CORSMiddleware
-from src.api.v1.controllers import user, workspace, spectrum
+from src.api.v1.controllers import user, workspace, spectrum, image
 from src.core.exception_handlers import CustomException, custom_exception_handler
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
@@ -30,6 +30,7 @@ def create_application() -> FastAPI:
     # add routers/controllers
     app.include_router(user.router)
     app.include_router(workspace.router)
+    app.include_router(image.router)
     app.include_router(spectrum.router)
 
     # add exception handlers and middleware

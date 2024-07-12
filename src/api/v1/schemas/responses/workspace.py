@@ -9,9 +9,9 @@ class AllPathsResponse(BaseModel):
     class Config:
         json_schema_extra = {
             "example": {
-                "id": "64b9bbd3d0cfec0352b41a1c",
-                "username": "test",
-                "email": "test@test.com",
+                "fileName": "H304.tif",
+                "number_of_spectra": 0,
+                "saved": True,
             }
         }
 

@@ -1,6 +1,7 @@
 from .requests.user import UserRequest, UserUpdateRequest, UserUpdatePasswordRequest
 from .requests.workspace import SaveConfigRequest
 from .requests.spectrum import PredictRequest
+from .requests.image import LoadRequest
 
 from .responses.user import UserResponse
 from .responses.workspace import AllPathsResponse, ConfigResponse

@@ -16,7 +16,6 @@ def predict(form: PredictRequest):
         image_path = os.path.join(
             img_path, 'train', img_name+'.png')
 
-    print(image_path)
     # Maximum time to validate that the file exists
     maxTime = 0
     while not os.path.exists(image_path) and maxTime < 60:
